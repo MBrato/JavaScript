@@ -12,11 +12,11 @@ function maxSequence(arr){
 		j = 0,
 		maxCount = 1,
 		result = 0;
-	for (i = 0; i < arr.length; i=j) {
-		for(j = i+1; +arr[j-1] < +arr[j] && j < arr.length; j += 1){
+	for (i = 0; i < arr.length; i = j) {
+		for (j = i + 1; + arr[j - 1] < +arr[j] && j < arr.length; j += 1) {
 			maxCount += 1;
 		}
-		if(maxCount > result){
+		if (maxCount > result) {
 			result = maxCount;
 		}
 		maxCount = 1;
