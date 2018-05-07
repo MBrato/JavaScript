@@ -1,9 +1,3 @@
-/*
-1. Write a function for creating persons - each person must have firstname, 
-lastname, age and gender (true is female, false is male).
-Generate an array with ten person with different names, ages and genders.
-*/
-
 let persons = [
 	person("Ivelina", "Dimitrova", 17, true),
 	person("Ivan", "Iliev", 20, false),
@@ -29,21 +23,10 @@ function person(firstname, lastname, age, gender){
 	}
 }
 
-/*
-2. Write a function that checks if an array of person contains only people of age (with age 18 or greater)
-- Use only array methods and no regular loops (for, while)
-*/
-
 function peopleOfAge(people){
 	let result = people.every(x => x.age >= 18);
 	return result === true ? console.log('Yes, all people are adults!') : console.log('No, not all people are adults!');
 }
-
-/*
-3. Write a function that prints all underaged persons of an array of person
-- Use Array#filter and Array#forEach
-- Use only array methods and no regular loops (for, while)
-*/
 
 function printUnderagePeople(people){
 	let underagePeople = people.filter((function(p) {
@@ -55,18 +38,12 @@ function printUnderagePeople(people){
 		}));
 }
 
-/*
-4. Write a function that calculates the average age of all females, extracted from an array of persons
-- Use Array#filter
-- Use only array methods and no regular loops (for, while)
-*/
-
 function averageAgeOfFemales(pers){
 	let femaleArr = pers.filter(x => x.gender === 'female'),
 		aver = 0,
 		count = 0;
 
-		femaleArr.map((function(female) {	
+		femaleArr.map((function(female) {
 			aver += female.age;
 			count += 1;
 		}));
@@ -74,24 +51,10 @@ function averageAgeOfFemales(pers){
 	return console.log(+aver / +count);
 }
 
-/*
-5. Write a function that finds the youngest male person in a given array of people and prints 
-his full name
-- Use only array methods and no regular loops (for, while)
-- Use Array#find
-*/
-
 function youngestPerson(pers){
 	let males = pers.sort((a,b) => Number(a.age) - Number(b.age)).find(x => x.gender === 'male');
 	return console.log(males.firstname + ' ' + males.lastname + ' is the youngest male person!');
 }
-
-/*
-6. Write a function that groups an array of persons by first letter of first name and returns 
-the groups as a JavaScript Object
-- Use Array#reduce
-- Use only array methods and no regular loops (for, while)
-*/
 
 function groupPeople(people){
 	let sortedPeople = people.sort(function(a, b) {
