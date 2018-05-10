@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Extract Parenthesis</title>
+</head>
+<body>
+	<p id="content">
+		Mintaro is a historic town in the eastern Clare Valley, east of the Horrocks Highway, about 126 kilometres (78 miles) north of Adelaide, South Australia. The town lies at the south-eastern corner of the Hundred of Clare (within the Clare Valley wine region). Established in 1849, Mintaro is situated on land which was bought originally by Joseph and Henry Gilbert, which they sub-divided into 80 allotments. Mintaro was originally intended as a stopping and resting place for the bullock teams (muleteers) carting copper ore from the Burra mine to Port Wakefield.
+	</p>
+	<script>
+		function extract(elementId){
+			let para = document.getElementById(elementId).textContent;
+			let pattern = /\(([^)]+)\)/g;
+			let result = [];
+
+			let match = pattern.exec(para);
+			while(match){
+				result.push(match[1]);
+				match = pattern.exec(para);
+			}
+			return result.join('; ');
+		}
+		//let text = extract("content");
+	</script>
+
+</body>
+</html>
