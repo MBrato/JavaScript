@@ -1,2 +1,2 @@
 # JavaScript
-JavaScript Homeworks
+JavaScript Exercises
